@@ -22,13 +22,13 @@
 	      bindings = <&kp RET>;
           };
         #endif
-      macro_switchkb: macro_kbd {
+      macro_kkb: macro_kbd {
         compatible = "zmk, behavior-macro";
         label = "macro_kbd";
         #binding-cells = <0>;
         bindings = <&kp LG(SPACE)>, <&to QWE>;
       };
-      macro_switchkb: macro_kbu {
+      macro_kbu: macro_kbu {
         compatible = "zmk, behavior-macro";
         label = "macro_kbu";
         #binding-cells = <0>;
