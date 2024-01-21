@@ -11,6 +11,18 @@
 #define MODI 5
 
 / {
+    macros {
+      macro_kbd: macro_kbd {
+        compatible = "zmk, behavior-macro";
+        #binding-cells = <0>;
+        bindings = <&kp LG(SPACE)>, <&to QWE>;
+      };
+      macro_kbu: macro_kbu {
+        compatible = "zmk, behavior-macro";
+        #binding-cells = <0>;
+        bindings = <&kp LG(SPACE)>, <&to DVO>;
+      };
+    };
     behaviors {
       	#include "macros.dtsi"
       	#include "version.dtsi"
@@ -22,27 +34,6 @@
 	      bindings = <&kp RET>;
           };
         #endif
-      macro_kbd: macro_kbd {
-        compatible = "zmk, behavior-macro";
-        label = "macro_kbd";
-        #binding-cells = <0>;
-        bindings = <&kp LG(SPACE)>, <&to QWE>;
-      };
-      macro_kbu: macro_kbu {
-        compatible = "zmk, behavior-macro";
-        label = "macro_kbu";
-        #binding-cells = <0>;
-        bindings = <&kp LG(SPACE)>, <&to DVO>;
-      };
-    hm: homerow_mods {
-	  compatible = "zmk,behavior-hold-tap";
-	  label = "HOMEROW_MODS";
-	  #binding-cells = <2>;
-	  tapping-term-ms = <200>;
-	  quick_tap_ms = <175>;
-	  flavor = "tap-preferred";
-	  bindings = <&kp>, <&kp>;
-      	};
 	gpipe: grave_pipe {
 	    compatible = "zmk,behavior-mod-morph";
 	    label = "grave_pipe";
