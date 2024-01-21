@@ -15,12 +15,12 @@
       macro_kbd: macro_keyboard_down {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
-        bindings = <&kp LG(SPACE)>, <&to QWE>;
+        bindings = <&kp LG(SPACE)>,<&to 1>;
       };
       macro_kbu: macro_keyboard_up {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
-        bindings = <&kp LG(SPACE)>, <&to DVO>;
+        bindings = <&kp LG(SPACE)>,<&to 0>;
       };
     };
     behaviors {
