@@ -12,15 +12,15 @@
 
 / {
     macros {
-      macro_kbd: macro_kbd {
-        compatible = "zmk, behavior-macro";
+      macro_kbd: macro_keyboard_down {
+        compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
-        bindings = <&kp LG(SPACE)>, <&to 1>;
+        bindings = <&kp LG(SPACE)>, <&to QWE>;
       };
-      macro_kbu: macro_kbu {
-        compatible = "zmk, behavior-macro";
+      macro_kbu: macro_keyboard_up {
+        compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
-        bindings = <&kp LG(SPACE)>, <&to 0>;
+        bindings = <&kp LG(SPACE)>, <&to DVO>;
       };
     };
     behaviors {
