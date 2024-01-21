@@ -34,15 +34,3 @@
     #binding-cells = <0>;
     bindings = <&kp LS(K)>, <&kp I>, <&kp N>, <&kp E>, <&kp S>, <&kp I>, <&kp S>;
   };
-  macro_kbd: macro_kbd {
-      compatible = "zmk, behavior-macro";
-      label = "macro_kbd";
-      #binding-cells = <0>;
-      bindings = <&kp LG(SPACE)>, <&to QWE>;
-  };
-  macro_kbu: macro_kbu {
-      compatible = "zmk, behavior-macro";
-      label = "macro_kbu";
-      #binding-cells = <0>;
-      bindings = <&kp LG(SPACE)>, <&to DVO>;
-  };
