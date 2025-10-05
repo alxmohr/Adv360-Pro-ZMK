@@ -13,22 +13,16 @@
 
 / {
     macros {
-      macro_kbc_ru: macro_keyboard_change_ru {
-        compatible = "zmk,behavior-macro-one-param";
+      macro_kbc: macro_keyboard_change {
+        compatible = "zmk,behavior-macro-two-param";
         #binding-cells = <1>;
-        bindings       = <&macro_press   &kp LGUI>
-                       , <&macro_tap     &kp N2>
+        bindings       = <&macro_press   &kp LCTL>
+					   , <&macro_press   &kp LSHIFT>
+					   , <&macro_param_1to1>
+                       , <&macro_tap     &kp MACRO_PLACEHOLDER>
+					   , <&macro_release &kp LSHIFT>
                        , <&macro_release &kp LGUI>
-                       , <&macro_param_1to1>
-                       , <&macro_press &to MACRO_PLACEHOLDER>;
-      };
-      macro_kbc_en: macro_keyboard_change_en {
-        compatible = "zmk,behavior-macro-one-param";
-        #binding-cells = <1>;
-        bindings       = <&macro_press   &kp LGUI>
-                       , <&macro_tap     &kp N1>
-                       , <&macro_release &kp LGUI>
-                       , <&macro_param_1to1>
+                       , <&macro_param_2to2>
                        , <&macro_press &to MACRO_PLACEHOLDER>;
       };
     };
@@ -42,7 +36,6 @@
 	    #binding-cells = <0>;
 	    bindings = <&kp GRAVE>, <&kp PIPE>;
 	    mods = <(MOD_LSFT|MOD_RSFT)>;
-		keep-mods = <(MOD_LSFT|MOD_RSFT)>;
 	};
 	bpipe: bslash_pipe {
 	    compatible = "zmk,behavior-mod-morph";
@@ -50,7 +43,6 @@
 	    #binding-cells = <0>;
 	    bindings = <&kp BSLH>, <&kp PIPE>;
 	    mods = <(MOD_LSFT|MOD_RSFT)>;
-		keep-mods = <(MOD_LSFT|MOD_RSFT)>;
 	};
 	pkp_n1: plus_kp_n1 {
 	    compatible = "zmk,behavior-mod-morph";
@@ -58,7 +50,6 @@
 	    #binding-cells = <0>;
 	    bindings = <&kp PLUS>, <&kp N1>;
 	    mods = <(MOD_LSFT|MOD_RSFT)>;
-		keep-mods = <(MOD_LSFT|MOD_RSFT)>;
 	};
 	lkp_n2: left_bracket_kp_n2 {
 	    compatible = "zmk,behavior-mod-morph";
@@ -66,7 +57,6 @@
 	    #binding-cells = <0>;
 	    bindings = <&kp LEFT_BRACKET>, <&kp N2>;
 	    mods = <(MOD_LSFT|MOD_RSFT)>;
-		keep-mods = <(MOD_LSFT|MOD_RSFT)>;
 	};
 	lkp_n3: left_brace_kp_n3 {
 	    compatible = "zmk,behavior-mod-morph";
@@ -74,7 +64,6 @@
 	    #binding-cells = <0>;
 	    bindings = <&kp LEFT_BRACE>, <&kp N3>;
 	    mods = <(MOD_LSFT|MOD_RSFT)>;
-		keep-mods = <(MOD_LSFT|MOD_RSFT)>;
 	};
 	lkp_n4: left_parenthesis_kp_n4 {
 	    compatible = "zmk,behavior-mod-morph";
@@ -82,7 +71,6 @@
 	    #binding-cells = <0>;
 	    bindings = <&kp LEFT_PARENTHESIS>, <&kp N4>;
 	    mods = <(MOD_LSFT|MOD_RSFT)>;
-		keep-mods = <(MOD_LSFT|MOD_RSFT)>;
 	};
 	akp_n5: amps_kp_n5 {
 	    compatible = "zmk,behavior-mod-morph";
@@ -90,7 +78,6 @@
 	    #binding-cells = <0>;
 	    bindings = <&kp AMPS>, <&kp N5>;
 	    mods = <(MOD_LSFT|MOD_RSFT)>;
-		keep-mods = <(MOD_LSFT|MOD_RSFT)>;
 	};
 	ekp_n6: equal_kp_n6 {
 	    compatible = "zmk,behavior-mod-morph";
@@ -98,7 +85,6 @@
 	    #binding-cells = <0>;
 	    bindings = <&kp EQUAL>, <&kp N6>;
 	    mods = <(MOD_LSFT|MOD_RSFT)>;
-		keep-mods = <(MOD_LSFT|MOD_RSFT)>;
 	};
 	rkp_n7: right_parenthesis_kp_n7 {
 	    compatible = "zmk,behavior-mod-morph";
@@ -106,7 +92,6 @@
 	    #binding-cells = <0>;
 	    bindings = <&kp RIGHT_PARENTHESIS>, <&kp N7>;
 	    mods = <(MOD_LSFT|MOD_RSFT)>;
-		keep-mods = <(MOD_LSFT|MOD_RSFT)>;
 	};
 	rkp_n8: right_brace_kp_n8 {
 	    compatible = "zmk,behavior-mod-morph";
@@ -114,7 +99,6 @@
 	    #binding-cells = <0>;
 	    bindings = <&kp RIGHT_BRACE>, <&kp N8>;
 	    mods = <(MOD_LSFT|MOD_RSFT)>;
-		keep-mods = <(MOD_LSFT|MOD_RSFT)>;
 	};
 	rkp_n9: right_bracket_kp_n9 {
 	    compatible = "zmk,behavior-mod-morph";
@@ -122,7 +106,6 @@
 	    #binding-cells = <0>;
 	    bindings = <&kp RIGHT_BRACKET>, <&kp N9>;
 	    mods = <(MOD_LSFT|MOD_RSFT)>;
-		keep-mods = <(MOD_LSFT|MOD_RSFT)>;
 	};
 	skp_n0: star_kp_n0 {
 	    compatible = "zmk,behavior-mod-morph";
@@ -130,7 +113,6 @@
 	    #binding-cells = <0>;
 	    bindings = <&kp STAR>, <&kp N0>;
 	    mods = <(MOD_LSFT|MOD_RSFT)>;
-		keep-mods = <(MOD_LSFT|MOD_RSFT)>;
 	};
 	eprcnt: excl_prcnt {
 	    compatible = "zmk,behavior-mod-morph";
@@ -138,7 +120,6 @@
 	    #binding-cells = <0>;
 	    bindings = <&kp EXCL>, <&kp PRCNT>;
 	    mods = <(MOD_LSFT|MOD_RSFT)>;
-		keep-mods = <(MOD_LSFT|MOD_RSFT)>;
 	};
 	dtilde: dllr_tilde {
 	    compatible = "zmk,behavior-mod-morph";
@@ -146,7 +127,6 @@
 	    #binding-cells = <0>;
 	    bindings = <&kp DLLR>, <&kp TILDE>;
 	    mods = <(MOD_LSFT|MOD_RSFT)>;
-		keep-mods = <(MOD_LSFT|MOD_RSFT)>;
 	};
 	ggrave: grave_grave {
 	    compatible = "zmk,behavior-mod-morph";
@@ -154,7 +134,6 @@
 	    #binding-cells = <0>;
 	    bindings = <&kp GRAVE>, <&kp GRAVE>;
 	    mods = <(MOD_LSFT|MOD_RSFT)>;
-		keep-mods = <(MOD_LSFT|MOD_RSFT)>;
 	};
 	bhash: bslh_hash {
 	    compatible = "zmk,behavior-mod-morph";
@@ -162,7 +141,6 @@
 	    #binding-cells = <0>;
 	    bindings = <&kp BSLH>, <&kp HASH>;
 	    mods = <(MOD_LSFT|MOD_RSFT)>;
-		keep-mods = <(MOD_LSFT|MOD_RSFT)>;
 	};
 	acaret: at_caret {
 	    compatible = "zmk,behavior-mod-morph";
@@ -170,7 +148,6 @@
 	    #binding-cells = <0>;
 	    bindings = <&kp AT>, <&kp CARET>;
 	    mods = <(MOD_LSFT|MOD_RSFT)>;
-		keep-mods = <(MOD_LSFT|MOD_RSFT)>;
 	};
   };
 
@@ -202,8 +179,8 @@
       //   `--------+------+------+------+------'               `-----+-----+-----'  `-----+-----+-----'                '------+------+------+------+--------'
       bindings = <
 	&dtilde   &pkp_n1    &lkp_n2    &lkp_n3  &lkp_n4  &akp_n5  &tog KPAD                                                                  &mo MODI &ekp_n6   &rkp_n7   &rkp_n8   &rkp_n9   &skp_n0  &eprcnt
-	&kp TAB   &kp SEMI   &kp COMMA  &kp DOT  &kp P    &kp Y    &macro_kbc_en DVO                                                             &kp PSCRN   &kp F     &kp G     &kp C     &kp R     &kp L    &kp FSLH
-	&kp ESC   &kp A      &kp O      &kp E    &kp U    &kp I    &macro_kbc_ru QWE               &kp LCTRL &kp LALT  &kp RALT  &kp RCTRL             &kp INS  &kp D     &kp H     &kp T     &kp N     &kp S    &kp MINUS
+	&kp TAB   &kp SEMI   &kp COMMA  &kp DOT  &kp P    &kp Y    &macro_kbc N1 QWE                                                             &kp PSCRN   &kp F     &kp G     &kp C     &kp R     &kp L    &kp FSLH
+	&kp ESC   &kp A      &kp O      &kp E    &kp U    &kp I    &macro_kbc N2 QWE               &kp LCTRL &kp LALT  &kp RALT  &kp RCTRL             &kp INS  &kp D     &kp H     &kp T     &kp N     &kp S    &kp MINUS
 	&kp LSHFT  &kp APOS  &kp Q      &kp J    &kp K    &kp X                                     &kp HOME  &kp PG_UP                                &kp B     &kp M     &kp W     &kp V     &kp Z    &kp RSHFT
 	&mo FN     &gpipe    &kp CAPS   &kp UP 	 &kp DOWN  	                &kp BKSP  &kp DEL   &kp LGUI   &kp RGUI &kp ENTER  &kp SPACE                     &kp LEFT   &kp RIGHT   &acaret   &bhash   &mo FN
             >;   
@@ -211,7 +188,7 @@
     default_layer {
       bindings = <
         &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &tog KPAD                                                        &mo MODI  &kp N6 &kp N7 &kp N8    &kp N9   &kp N0   &kp MINUS
-        &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &macro_kbc_en DVO                                                   &kp PSCRN    &kp Y  &kp U  &kp I     &kp O    &kp P    &kp BSLH
+        &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &macro_kbc en QWE                                                   &kp PSCRN    &kp Y  &kp U  &kp I     &kp O    &kp P    &kp BSLH
         &kp ESC   &kp A     &kp S    &kp D    &kp F      &kp G  &macro_kbc_ru QWE        &kp LCTRL &kp LALT &kp RALT  &kp RCTRL           &kp INS   &kp H  &kp J  &kp K     &kp L    &kp SEMI &kp SQT
         &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                            &kp HOME &kp PG_UP                               &kp N  &kp M  &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
         &mo FN    &kp GRAVE &kp CAPS &kp UP   &kp DOWN                     &kp BSPC &kp DEL   &kp LGUI  &kp RGUI &kp ENTER &kp SPACE                  &kp LEFT  &kp RIGHT     &kp LBKT &kp RBKT &mo FN
@@ -220,8 +197,8 @@
     keypad {
       bindings = <
         &trans  &trans  &trans  &trans  &trans  &trans  &trans                                                           &mo MODI  &trans  &kp KP_NUM &kp KP_EQUAL &kp KP_DIVIDE &kp KP_MULTIPLY &trans
-        &trans  &trans  &trans  &trans  &trans  &trans  &trans                                                           &trans     &trans  &kp KP_N7  &kp KP_N8    &kp KP_N9     &kp KP_MINUS    &trans
-        &trans  &trans  &trans  &trans  &trans  &trans  &trans          &kp LCTRL &kp LALT &kp RALT  &kp RCTRL           &trans    &trans  &kp KP_N4  &kp KP_N5    &kp KP_N6     &kp KP_PLUS     &trans 
+        &trans  &trans  &trans  &trans  &trans  &trans  &macro_kbc en DVO                                                           &trans     &trans  &kp KP_N7  &kp KP_N8    &kp KP_N9     &kp KP_MINUS    &trans
+        &trans  &trans  &trans  &trans  &trans  &trans  &macro_kbc ru QWE         &kp LCTRL &kp LALT &kp RALT  &kp RCTRL           &trans    &trans  &kp KP_N4  &kp KP_N5    &kp KP_N6     &kp KP_PLUS     &trans 
         &trans  &trans  &trans  &trans  &trans  &trans                            &kp HOME &kp PG_UP                               &trans  &kp KP_N1  &kp KP_N2    &kp KP_N3     &kp KP_ENTER    &trans
         &trans  &trans  &trans  &trans  &trans                  &kp BSPC &kp DEL   &kp LGUI  &kp RGUI &kp ENTER &kp KP_N0                   &trans      &trans        &kp KP_DOT    &trans          &trans
       >;
