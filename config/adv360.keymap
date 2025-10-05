@@ -15,7 +15,7 @@
     macros {
       macro_kbc: macro_keyboard_change {
         compatible = "zmk,behavior-macro-two-param";
-        #binding-cells = <1>;
+        #binding-cells = <2>;
         bindings       = <&macro_press   &kp LCTL>
 					   , <&macro_press   &kp LSHIFT>
 					   , <&macro_param_1to1>
