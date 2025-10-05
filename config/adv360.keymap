@@ -29,7 +29,7 @@
 					   , <&macro_release &kp LSHIFT>
                        , <&macro_release &kp LCTL>
                        , <&macro_param_2to2>
-                       , <&macro_press &to MACRO_PLACEHOLDER>;
+                       , <&macro_tap     &to MACRO_PLACEHOLDER>;
       };
     };
     behaviors {
