@@ -19,17 +19,35 @@
 
 / {
     macros {
-      macro_kbc: macro_keyboard_change {
-        compatible = "zmk,behavior-macro-two-param";
-        #binding-cells = <2>;
-        bindings       = <&macro_press   &kp LCTL>
+      macro_kbc_en_DVO: macro_keyboard_change_ed {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings       = <&macro_tap &to DVO>
+					   , <&macro_press   &kp LCTL>
 					   , <&macro_press   &kp LSHIFT>
-					   , <&macro_param_1to1>
-                       , <&macro_tap     &kp MACRO_PLACEHOLDER>
+                       , <&macro_tap     &kp N1>
 					   , <&macro_release &kp LSHIFT>
-                       , <&macro_release &kp LCTL>
-                       , <&macro_param_2to2>
-                       , <&macro_tap     &to MACRO_PLACEHOLDER>;
+                       , <&macro_release &kp LCTL>;
+      };
+      macro_kbc_en_QWE: macro_keyboard_change_eq {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings       = <&macro_tap &to QWE>
+					   , <&macro_press   &kp LCTL>
+					   , <&macro_press   &kp LSHIFT>
+                       , <&macro_tap     &kp N1>
+					   , <&macro_release &kp LSHIFT>
+                       , <&macro_release &kp LCTL>;
+      };
+      macro_kbc_ru_QWE: macro_keyboard_change_rq {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings       = <&macro_tap &to QWE>
+					   , <&macro_press   &kp LCTL>
+					   , <&macro_press   &kp LSHIFT>
+                       , <&macro_tap     &kp N2>
+					   , <&macro_release &kp LSHIFT>
+                       , <&macro_release &kp LCTL>;
       };
     };
     behaviors {
@@ -185,8 +203,8 @@
       //   `--------+------+------+------+------'               `-----+-----+-----'  `-----+-----+-----'                '------+------+------+------+--------'
       bindings = <
 	&dtilde   &pkp_n1    &lkp_n2    &lkp_n3  &lkp_n4  &akp_n5  &tog KPAD                                                                  &mo MODI &ekp_n6   &rkp_n7   &rkp_n8   &rkp_n9   &skp_n0  &eprcnt
-	&kp TAB   &kp SEMI   &kp COMMA  &kp DOT  &kp P    &kp Y    &macro_kbc N1 QWE                                                             &kp PSCRN   &kp F     &kp G     &kp C     &kp R     &kp L    &kp FSLH
-	&kp ESC   &kp A      &kp O      &kp E    &kp U    &kp I    &macro_kbc N2 QWE               &kp LCTRL &kp LALT  &kp RALT  &kp RCTRL             &kp INS  &kp D     &kp H     &kp T     &kp N     &kp S    &kp MINUS
+	&kp TAB   &kp SEMI   &kp COMMA  &kp DOT  &kp P    &kp Y    &macro_kbc_en_QWE                                                             &kp PSCRN   &kp F     &kp G     &kp C     &kp R     &kp L    &kp FSLH
+	&kp ESC   &kp A      &kp O      &kp E    &kp U    &kp I    &macro_kbc_ru_QWE               &kp LCTRL &kp LALT  &kp RALT  &kp RCTRL             &kp INS  &kp D     &kp H     &kp T     &kp N     &kp S    &kp MINUS
 	&kp LSHFT  &kp APOS  &kp Q      &kp J    &kp K    &kp X                                     &kp HOME  &kp PG_UP                                &kp B     &kp M     &kp W     &kp V     &kp Z    &kp RSHFT
 	&mo FN     &gpipe    &kp CAPS   &kp UP 	 &kp DOWN  	                &kp BKSP  &kp DEL   &kp LGUI   &kp RGUI &kp ENTER  &kp SPACE                     &kp LEFT   &kp RIGHT   &acaret   &bhash   &mo FN
             >;   
@@ -194,8 +212,8 @@
     default_layer {
       bindings = <
         &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &tog KPAD                                                        &mo MODI  &kp N6 &kp N7 &kp N8    &kp N9   &kp N0   &kp MINUS
-        &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &macro_kbc N1 QWE                                                   &kp PSCRN    &kp Y  &kp U  &kp I     &kp O    &kp P    &kp BSLH
-        &kp ESC   &kp A     &kp S    &kp D    &kp F      &kp G  &macro_kbc N2 QWE        &kp LCTRL &kp LALT &kp RALT  &kp RCTRL           &kp INS   &kp H  &kp J  &kp K     &kp L    &kp SEMI &kp SQT
+        &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &macro_kbc_en_QWE                                                   &kp PSCRN    &kp Y  &kp U  &kp I     &kp O    &kp P    &kp BSLH
+        &kp ESC   &kp A     &kp S    &kp D    &kp F      &kp G  &macro_kbc_ru_QWE        &kp LCTRL &kp LALT &kp RALT  &kp RCTRL           &kp INS   &kp H  &kp J  &kp K     &kp L    &kp SEMI &kp SQT
         &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                            &kp HOME &kp PG_UP                               &kp N  &kp M  &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
         &mo FN    &kp GRAVE &kp CAPS &kp UP   &kp DOWN                     &kp BSPC &kp DEL   &kp LGUI  &kp RGUI &kp ENTER &kp SPACE                  &kp LEFT  &kp RIGHT     &kp LBKT &kp RBKT &mo FN
       >;
@@ -203,8 +221,8 @@
     keypad {
       bindings = <
         &trans  &trans  &trans  &trans  &trans  &trans  &trans                                                           &mo MODI  &trans  &kp KP_NUM &kp KP_EQUAL &kp KP_DIVIDE &kp KP_MULTIPLY &trans
-        &trans  &trans  &trans  &trans  &trans  &trans  &macro_kbc N1 DVO                                                           &trans     &trans  &kp KP_N7  &kp KP_N8    &kp KP_N9     &kp KP_MINUS    &trans
-        &trans  &trans  &trans  &trans  &trans  &trans  &macro_kbc N2 QWE         &kp LCTRL &kp LALT &kp RALT  &kp RCTRL           &trans    &trans  &kp KP_N4  &kp KP_N5    &kp KP_N6     &kp KP_PLUS     &trans 
+        &trans  &trans  &trans  &trans  &trans  &trans  &macro_kbc_en_DVO                                                           &trans     &trans  &kp KP_N7  &kp KP_N8    &kp KP_N9     &kp KP_MINUS    &trans
+        &trans  &trans  &trans  &trans  &trans  &trans  &macro_kbc_ru_QWE         &kp LCTRL &kp LALT &kp RALT  &kp RCTRL           &trans    &trans  &kp KP_N4  &kp KP_N5    &kp KP_N6     &kp KP_PLUS     &trans 
         &trans  &trans  &trans  &trans  &trans  &trans                            &kp HOME &kp PG_UP                               &trans  &kp KP_N1  &kp KP_N2    &kp KP_N3     &kp KP_ENTER    &trans
         &trans  &trans  &trans  &trans  &trans                  &kp BSPC &kp DEL   &kp LGUI  &kp RGUI &kp ENTER &kp KP_N0                   &trans      &trans        &kp KP_DOT    &trans          &trans
       >;
@@ -212,8 +230,8 @@
     fn {
       bindings = <
         &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6  &tog KPAD                                       &mo MODI &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
-        &trans &trans &trans &trans &trans &trans  &macro_kbc N1 DVO                                           &none    &trans &trans &trans &trans  &kp RIGHT  &trans
-        &trans &trans &trans &trans &trans &trans  &macro_kbc N2 QWE        &trans &trans &trans &trans        &none    &trans &kp LEFT &trans &trans  &trans  &trans
+        &trans &trans &trans &trans &trans &trans  &macro_kbc_en_DVO                                           &none    &trans &trans &trans &trans  &kp RIGHT  &trans
+        &trans &trans &trans &trans &trans &trans  &macro_kbc_ru_QWE        &trans &trans &trans &trans        &none    &trans &kp LEFT &trans &trans  &trans  &trans
         &trans &trans &trans &kp DOWN &kp UP &trans                      &trans &trans                        &trans &trans &trans &trans  &trans  &trans
         &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans                 &trans  &trans  &trans  &trans  &trans
       >;
