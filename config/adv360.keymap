@@ -35,7 +35,7 @@
         bindings       = <&macro_tap &to QWE>
 					   , <&macro_press   &kp LCTL>
 					   , <&macro_press   &kp LSHIFT>
-                       , <&macro_tap     &kp LEFT_BRACKET>
+                       , <&macro_tap     &kp N2>
 					   , <&macro_release &kp LSHIFT>
                        , <&macro_release &kp LCTL>;
       };
@@ -45,7 +45,7 @@
         bindings       = <&macro_tap &to QWE>
 					   , <&macro_press   &kp LGUI>
 					   , <&macro_press   &kp LALT>
-                       , <&macro_tap     &kp PLUS>
+                       , <&macro_tap     &kp E>
 					   , <&macro_release &kp LALT>
                        , <&macro_release &kp LGUI>;
       };
@@ -55,7 +55,7 @@
         bindings       = <&macro_tap &to QWE>
 					   , <&macro_press   &kp LGUI>
 					   , <&macro_press   &kp LALT>
-                       , <&macro_tap     &kp LEFT_BRACKET>
+                       , <&macro_tap     &kp R>
 					   , <&macro_release &kp LALT>
                        , <&macro_release &kp LGUI>;
       };
