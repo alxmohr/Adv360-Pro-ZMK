@@ -46,21 +46,17 @@
         #binding-cells = <0>;
         bindings       = <&macro_tap &to QWE>
 					   , <&macro_press   &kp LGUI>
-					   , <&macro_press   &kp LALT>
                        , <&macro_press   &kp E>
                        , <&macro_release &kp E>
-					   , <&macro_release &kp LALT>
-                       , <&macro_release &kp LGUI>;
+					   , <&macro_release &kp LGUI>;
       };
       macro_kbc_ru_QWE: macro_keyboard_change_rq {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
         bindings       = <&macro_tap &to QWE>
 					   , <&macro_press   &kp LGUI>
-					   , <&macro_press   &kp LALT>
                        , <&macro_press   &kp R>
                        , <&macro_release &kp R>
-					   , <&macro_release &kp LALT>
                        , <&macro_release &kp LGUI>;
       };
     };
