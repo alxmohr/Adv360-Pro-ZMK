@@ -29,7 +29,7 @@
 					   , <&macro_release &kp LALT>
                        , <&macro_release &kp LGUI>;
       };
-      macro_kbc_ru_DVO: macro_keyboard_change_ed {
+      macro_kbc_ru_DVO: macro_keyboard_change_rd {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
         bindings       = <&macro_tap &to DVO>
