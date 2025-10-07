@@ -36,7 +36,6 @@
 					   , <&macro_press   &kp LCTL>
 					   , <&macro_press   &kp LSHIFT>
                        , <&macro_tap     &kp N2>
-                       , <&macro_release &kp N2>
 					   , <&macro_release &kp LSHIFT>
                        , <&macro_release &kp LCTL>;
       };
@@ -46,8 +45,8 @@
         bindings       = <&macro_tap &to QWE>
 					   , <&macro_press   &kp LGUI>
                        , <&macro_press   &kp LALT>
-                       , <&macro_tap     &kp DOT>
-                       , <&macro_press   &kp LALT>
+                       , <&macro_tap     &kp D>
+                       , <&macro_release   &kp LALT>
 					   , <&macro_release &kp LGUI>;
       };
       macro_kbc_ru_QWE: macro_keyboard_change_rq {
@@ -56,8 +55,8 @@
         bindings       = <&macro_tap &to QWE>
 					   , <&macro_press   &kp LGUI>
                        , <&macro_press   &kp LALT>
-                       , <&macro_tap     &kp P>
-                       , <&macro_press   &kp LALT>
+                       , <&macro_tap     &kp O>
+                       , <&macro_release &kp LALT>
                        , <&macro_release &kp LGUI>;
       };
     };
