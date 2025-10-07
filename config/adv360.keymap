@@ -23,41 +23,41 @@
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
         bindings       = <&macro_tap &to DVO>
-					   , <&macro_press   &kp LGUI>
-					   , <&macro_press   &kp LALT>
-                       , <&macro_tap     &kp PLUS>
-					   , <&macro_release &kp LALT>
-                       , <&macro_release &kp LGUI>;
-      };
-      macro_kbc_ru_DVO: macro_keyboard_change_rd {
-        compatible = "zmk,behavior-macro";
-        #binding-cells = <0>;
-        bindings       = <&macro_tap &to DVO>
-					   , <&macro_press   &kp LGUI>
-					   , <&macro_press   &kp LALT>
-                       , <&macro_tap     &kp LEFT_BRACKET>
-					   , <&macro_release &kp LALT>
-                       , <&macro_release &kp LGUI>;
-      };
-      macro_kbc_en_QWE: macro_keyboard_change_eq {
-        compatible = "zmk,behavior-macro";
-        #binding-cells = <0>;
-        bindings       = <&macro_tap &to QWE>
 					   , <&macro_press   &kp LCTL>
 					   , <&macro_press   &kp LSHIFT>
                        , <&macro_tap     &kp N1>
 					   , <&macro_release &kp LSHIFT>
                        , <&macro_release &kp LCTL>;
       };
-      macro_kbc_ru_QWE: macro_keyboard_change_rq {
+      macro_kbc_ru_DVO: macro_keyboard_change_rd {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
         bindings       = <&macro_tap &to QWE>
 					   , <&macro_press   &kp LCTL>
 					   , <&macro_press   &kp LSHIFT>
-                       , <&macro_tap     &kp N2>
+                       , <&macro_tap     &kp LEFT_BRACKET>
 					   , <&macro_release &kp LSHIFT>
                        , <&macro_release &kp LCTL>;
+      };
+      macro_kbc_en_QWE: macro_keyboard_change_eq {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings       = <&macro_tap &to QWE>
+					   , <&macro_press   &kp LGUI>
+					   , <&macro_press   &kp LALT>
+                       , <&macro_tap     &kp PLUS>
+					   , <&macro_release &kp LALT>
+                       , <&macro_release &kp LGUI>;
+      };
+      macro_kbc_ru_QWE: macro_keyboard_change_rq {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings       = <&macro_tap &to QWE>
+					   , <&macro_press   &kp LGUI>
+					   , <&macro_press   &kp LALT>
+                       , <&macro_tap     &kp LEFT_BRACKET>
+					   , <&macro_release &kp LALT>
+                       , <&macro_release &kp LGUI>;
       };
     };
     behaviors {
@@ -231,7 +231,7 @@
     keypad {
       bindings = <
         &trans  &trans  &trans  &trans  &trans  &trans  &trans                                                           &mo MODI  &trans  &kp KP_NUM &kp KP_EQUAL &kp KP_DIVIDE &kp KP_MULTIPLY &trans
-        &trans  &trans  &trans  &trans  &trans  &trans  &macro_kbc_en_DVO                                                           &trans     &trans  &kp KP_N7  &kp KP_N8    &kp KP_N9     &kp KP_MINUS    &trans
+        &trans  &trans  &trans  &trans  &trans  &trans  &macro_kbc_en_QWE                                                           &trans     &trans  &kp KP_N7  &kp KP_N8    &kp KP_N9     &kp KP_MINUS    &trans
         &trans  &trans  &trans  &trans  &trans  &trans  &macro_kbc_ru_QWE         &kp LCTRL &kp LALT &kp RALT  &kp RCTRL           &trans    &trans  &kp KP_N4  &kp KP_N5    &kp KP_N6     &kp KP_PLUS     &trans 
         &trans  &trans  &trans  &trans  &trans  &trans                            &kp HOME &kp PG_UP                               &trans  &kp KP_N1  &kp KP_N2    &kp KP_N3     &kp KP_ENTER    &trans
         &trans  &trans  &trans  &trans  &trans                  &kp BSPC &kp DEL   &kp LGUI  &kp RGUI &kp ENTER &kp KP_N0                   &trans      &trans        &kp KP_DOT    &trans          &trans
