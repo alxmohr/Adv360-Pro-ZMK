@@ -23,21 +23,21 @@
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
         bindings       = <&macro_tap &to DVO>
-					   , <&macro_press   &kp LSUPER>
+					   , <&macro_press   &kp LGUI>
 					   , <&macro_press   &kp LALT>
                        , <&macro_tap     &kp PLUS>
 					   , <&macro_release &kp LALT>
-                       , <&macro_release &kp LSUPER>;
+                       , <&macro_release &kp LGUI>;
       };
       macro_kbc_ru_DVO: macro_keyboard_change_ed {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
         bindings       = <&macro_tap &to DVO>
-					   , <&macro_press   &kp LSUPER>
+					   , <&macro_press   &kp LGUI>
 					   , <&macro_press   &kp LALT>
                        , <&macro_tap     &kp LEFT_BRACKET>
 					   , <&macro_release &kp LALT>
-                       , <&macro_release &kp LSUPER>;
+                       , <&macro_release &kp LGUI>;
       };
       macro_kbc_en_QWE: macro_keyboard_change_eq {
         compatible = "zmk,behavior-macro";
