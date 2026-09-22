@@ -42,11 +42,11 @@
       macro_kbc_en_QWE: macro_keyboard_change_eq {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
-        bindings       = <&macro_tap &to QWE>
+        bindings       = <&macro_tap &to DVO>
 					   , <&macro_press   &kp LGUI>
                        , <&macro_press   &kp LALT>
                        , <&macro_tap     &kp D>
-                       , <&macro_release   &kp LALT>
+                       , <&macro_release &kp LALT>
 					   , <&macro_release &kp LGUI>;
       };
       macro_kbc_ru_QWE: macro_keyboard_change_rq {
