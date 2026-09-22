@@ -107,6 +107,8 @@ macro_rparen: macro_rparen {
 macro_rbrace: macro_rbrace {
     compatible = "zmk,behavior-macro";
     #binding-cells = <0>;
+    wait-ms = <40>;
+    tap-ms = <40>;
     bindings = <&macro_press &kp LSHIFT>
                , <&macro_tap &kp RIGHT_BRACKET>
                , <&macro_release &kp LSHIFT>;
@@ -114,6 +116,8 @@ macro_rbrace: macro_rbrace {
 macro_asterisk: macro_asterisk {
     compatible = "zmk,behavior-macro";
     #binding-cells = <0>;
+    wait-ms = <40>;
+    tap-ms = <40>;
     bindings = <&macro_press &kp LSHIFT>
                , <&macro_tap &kp N8>
                , <&macro_release &kp LSHIFT>;
