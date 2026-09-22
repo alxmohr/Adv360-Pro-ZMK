@@ -22,7 +22,7 @@
       macro_kbc_en_DV0: macro_keyboard_change_ed {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
-        bindings       = <&macro_tap &to DV0>
+        bindings       = <&macro_tap &to DVO>
 					   , <&macro_press   &kp LCTL>
 					   , <&macro_press   &kp LSHIFT>
                        , <&macro_tap     &kp N1>
@@ -42,7 +42,7 @@
       macro_kbc_en_DV1: macro_keyboard_change_eq {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
-        bindings       = <&macro_tap &to DV0>
+        bindings       = <&macro_tap &to DVO>
 					   , <&macro_press   &kp LGUI>
                        , <&macro_press   &kp LALT>
                        , <&macro_tap     &kp D>
