@@ -127,13 +127,14 @@ macro_asterisk: macro_asterisk {
 	    bindings = <&kp BSLH>, <&kp PIPE>;
 	    mods = <(MOD_LSFT|MOD_RSFT)>;
 	};
-	pkp_n1: plus_kp_n1 {
-	    compatible = "zmk,behavior-mod-morph";
-	    label = "plus_kp_n1";
-	    #binding-cells = <0>;
-	    bindings = <&kp PLUS>, <&kp N1>;
-	    mods = <(MOD_LSFT|MOD_RSFT)>;
-	};
+pkp_n1: plus_kp_n1 {
+    compatible = "zmk,behavior-mod-morph";
+    label = "plus_kp_n1";
+    #binding-cells = <0>;
+    bindings = <&macro_plus>, <&kp N1>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+};
+
 	lkp_n2: left_bracket_kp_n2 {
 	    compatible = "zmk,behavior-mod-morph";
 	    label = "left_bracket_kp_n2";
@@ -145,22 +146,22 @@ macro_asterisk: macro_asterisk {
 	    compatible = "zmk,behavior-mod-morph";
 	    label = "left_brace_kp_n3";
 	    #binding-cells = <0>;
-	    bindings = <&kp LEFT_BRACE>, <&kp N3>;
-	    mods = <(MOD_LSFT|MOD_RSFT)>;
+        bindings = <&macro_lbrace>, <&kp N3>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
 	};
 	lkp_n4: left_parenthesis_kp_n4 {
 	    compatible = "zmk,behavior-mod-morph";
 	    label = "left_parenthesis_kp_n4";
 	    #binding-cells = <0>;
-	    bindings = <&kp LEFT_PARENTHESIS>, <&kp N4>;
-	    mods = <(MOD_LSFT|MOD_RSFT)>;
+        bindings = <&macro_lparen>, <&kp N4>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
 	};
 	akp_n5: amps_kp_n5 {
 	    compatible = "zmk,behavior-mod-morph";
 	    label = "amps_kp_n5";
 	    #binding-cells = <0>;
-	    bindings = <&kp AMPS>, <&kp N5>;
-	    mods = <(MOD_LSFT|MOD_RSFT)>;
+        bindings = <&macro_amps>, <&kp N5>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
 	};
 	ekp_n6: equal_kp_n6 {
 	    compatible = "zmk,behavior-mod-morph";
@@ -173,15 +174,15 @@ macro_asterisk: macro_asterisk {
 	    compatible = "zmk,behavior-mod-morph";
 	    label = "right_parenthesis_kp_n7";
 	    #binding-cells = <0>;
-	    bindings = <&kp RIGHT_PARENTHESIS>, <&kp N7>;
-	    mods = <(MOD_LSFT|MOD_RSFT)>;
+        bindings = <&macro_rparen>, <&kp N7>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
 	};
 	rkp_n8: right_brace_kp_n8 {
 	    compatible = "zmk,behavior-mod-morph";
 	    label = "right_brace_kp_n8";
 	    #binding-cells = <0>;
-	    bindings = <&kp RIGHT_BRACE>, <&kp N8>;
-	    mods = <(MOD_LSFT|MOD_RSFT)>;
+        bindings = <&macro_rbrace>, <&kp N8>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
 	};
 	rkp_n9: right_bracket_kp_n9 {
 	    compatible = "zmk,behavior-mod-morph";
@@ -194,8 +195,8 @@ macro_asterisk: macro_asterisk {
 	    compatible = "zmk,behavior-mod-morph";
 	    label = "star_kp_n0";
 	    #binding-cells = <0>;
-	    bindings = <&kp STAR>, <&kp N0>;
-	    mods = <(MOD_LSFT|MOD_RSFT)>;
+        bindings = <&macro_asterisk>, <&kp N0>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
 	};
 	eprcnt: excl_prcnt {
 	    compatible = "zmk,behavior-mod-morph";
@@ -261,7 +262,7 @@ macro_asterisk: macro_asterisk {
       //   |  FN    |   `| | CAPS |  Up  | Down |               |     |     |L Gui|  |R Gui|     |     |                | Left | Right|   @^ |   \# |  FN    |
       //   `--------+------+------+------+------'               `-----+-----+-----'  `-----+-----+-----'                '------+------+------+------+--------'
       bindings = <
-	&dtilde   &macro_plus &lkp_n2  &macro_lbrace  &macro_lparen  &macro_amps  &tog KPAD                                                      &mo MODI &ekp_n6   &macro_rparen   &macro_rbrace   &rkp_n9   &macro_asterisk  &eprcnt
+    &dtilde   &pkp_n1   &lkp_n2    &lkp_n3  &lkp_n4  &akp_n5  &tog KPAD                                                                  &mo MODI &ekp_n6   &rkp_n7   &rkp_n8   &rkp_n9   &skp_n0  &eprcnt
 	&kp TAB   &kp SEMI   &kp COMMA  &kp DOT  &kp P    &kp Y    &macro_kbc_en_QWE                                                             &kp PSCRN   &kp F     &kp G     &kp C     &kp R     &kp L    &kp FSLH
 	&kp ESC   &kp A      &kp O      &kp E    &kp U    &kp I    &macro_kbc_ru_QWE               &kp LCTRL &kp LALT  &kp RALT  &kp RCTRL             &kp INS  &kp D     &kp H     &kp T     &kp N     &kp S    &kp MINUS
 	&kp LSHFT  &kp APOS  &kp Q      &kp J    &kp K    &kp X                                     &kp HOME  &kp PG_UP                                &kp B     &kp M     &kp W     &kp V     &kp Z    &kp RSHFT
