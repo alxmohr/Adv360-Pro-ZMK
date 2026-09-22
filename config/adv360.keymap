@@ -22,7 +22,7 @@
       macro_kbc_en_DVO: macro_keyboard_change_ed {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
-        bindings       = <&macro_tap &to DVO>
+        bindings       = <&macro_tap &to DV0>
 					   , <&macro_press   &kp LCTL>
 					   , <&macro_press   &kp LSHIFT>
                        , <&macro_tap     &kp N1>
