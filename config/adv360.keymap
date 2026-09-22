@@ -19,7 +19,7 @@
 
 / {
     macros {
-      macro_kbc_en_DVO: macro_keyboard_change_ed {
+      macro_kbc_en_DV0: macro_keyboard_change_ed {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
         bindings       = <&macro_tap &to DV0>
