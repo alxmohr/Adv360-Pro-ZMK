@@ -59,6 +59,55 @@
                        , <&macro_release &kp LALT>
                        , <&macro_release &kp LGUI>;
       };
+macro_plus: macro_plus {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&macro_press &kp LSHIFT>
+               , <&macro_tap &kp EQUAL>
+               , <&macro_release &kp LSHIFT>;
+};
+macro_lbrace: macro_lbrace {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&macro_press &kp LSHIFT>
+               , <&macro_tap &kp LEFT_BRACKET>
+               , <&macro_release &kp LSHIFT>;
+};
+macro_lparen: macro_lparen {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&macro_press &kp LSHIFT>
+               , <&macro_tap &kp N9>
+               , <&macro_release &kp LSHIFT>;
+};
+macro_amps: macro_amps {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&macro_press &kp LSHIFT>
+               , <&macro_tap &kp N7>
+               , <&macro_release &kp LSHIFT>;
+};
+macro_rparen: macro_rparen {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&macro_press &kp LSHIFT>
+               , <&macro_tap &kp N0>
+               , <&macro_release &kp LSHIFT>;
+};
+macro_rbrace: macro_rbrace {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&macro_press &kp LSHIFT>
+               , <&macro_tap &kp RIGHT_BRACKET>
+               , <&macro_release &kp LSHIFT>;
+};
+macro_asterisk: macro_asterisk {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&macro_press &kp LSHIFT>
+               , <&macro_tap &kp N8>
+               , <&macro_release &kp LSHIFT>;
+};
     };
     behaviors {
       	#include "macros.dtsi"
@@ -212,7 +261,7 @@
       //   |  FN    |   `| | CAPS |  Up  | Down |               |     |     |L Gui|  |R Gui|     |     |                | Left | Right|   @^ |   \# |  FN    |
       //   `--------+------+------+------+------'               `-----+-----+-----'  `-----+-----+-----'                '------+------+------+------+--------'
       bindings = <
-	&dtilde   &pkp_n1    &lkp_n2    &lkp_n3  &lkp_n4  &akp_n5  &tog KPAD                                                                  &mo MODI &ekp_n6   &rkp_n7   &rkp_n8   &rkp_n9   &skp_n0  &eprcnt
+	&dtilde   &macro_plus &lkp_n2  &macro_lbrace  &macro_lparen  &macro_amps  &tog KPAD                                                      &mo MODI &ekp_n6   &macro_rparen   &macro_rbrace   &rkp_n9   &macro_asterisk  &eprcnt
 	&kp TAB   &kp SEMI   &kp COMMA  &kp DOT  &kp P    &kp Y    &macro_kbc_en_QWE                                                             &kp PSCRN   &kp F     &kp G     &kp C     &kp R     &kp L    &kp FSLH
 	&kp ESC   &kp A      &kp O      &kp E    &kp U    &kp I    &macro_kbc_ru_QWE               &kp LCTRL &kp LALT  &kp RALT  &kp RCTRL             &kp INS  &kp D     &kp H     &kp T     &kp N     &kp S    &kp MINUS
 	&kp LSHFT  &kp APOS  &kp Q      &kp J    &kp K    &kp X                                     &kp HOME  &kp PG_UP                                &kp B     &kp M     &kp W     &kp V     &kp Z    &kp RSHFT
