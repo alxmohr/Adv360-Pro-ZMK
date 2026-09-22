@@ -62,6 +62,8 @@
 macro_plus: macro_plus {
     compatible = "zmk,behavior-macro";
     #binding-cells = <0>;
+    wait-ms = <40>;
+    tap-ms = <40>;
     bindings = <&macro_press &kp LSHIFT>
                , <&macro_tap &kp EQUAL>
                , <&macro_release &kp LSHIFT>;
@@ -69,6 +71,8 @@ macro_plus: macro_plus {
 macro_lbrace: macro_lbrace {
     compatible = "zmk,behavior-macro";
     #binding-cells = <0>;
+    wait-ms = <40>;
+    tap-ms = <40>;
     bindings = <&macro_press &kp LSHIFT>
                , <&macro_tap &kp LEFT_BRACKET>
                , <&macro_release &kp LSHIFT>;
@@ -76,6 +80,8 @@ macro_lbrace: macro_lbrace {
 macro_lparen: macro_lparen {
     compatible = "zmk,behavior-macro";
     #binding-cells = <0>;
+    wait-ms = <40>;
+    tap-ms = <40>;
     bindings = <&macro_press &kp LSHIFT>
                , <&macro_tap &kp N9>
                , <&macro_release &kp LSHIFT>;
@@ -83,6 +89,8 @@ macro_lparen: macro_lparen {
 macro_amps: macro_amps {
     compatible = "zmk,behavior-macro";
     #binding-cells = <0>;
+    wait-ms = <40>;
+    tap-ms = <40>;
     bindings = <&macro_press &kp LSHIFT>
                , <&macro_tap &kp N7>
                , <&macro_release &kp LSHIFT>;
@@ -90,6 +98,8 @@ macro_amps: macro_amps {
 macro_rparen: macro_rparen {
     compatible = "zmk,behavior-macro";
     #binding-cells = <0>;
+    wait-ms = <40>;
+    tap-ms = <40>;
     bindings = <&macro_press &kp LSHIFT>
                , <&macro_tap &kp N0>
                , <&macro_release &kp LSHIFT>;
